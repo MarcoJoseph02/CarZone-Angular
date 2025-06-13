@@ -1,0 +1,96 @@
+<div
+  #navbarContainer
+  class="navbar-container"
+  [class.black-nav]="router.url !== '/'"
+>
+  <ul class="navbar">
+    <li>
+      <a routerLink="" (click)="scrollToTop()">
+        <img class="logo" src="logos/CarZone.png" alt="Home" />
+      </a>
+    </li>
+    <div class="navbar-links">
+      <li>
+        <a
+          (click)="scrollToTop()"
+          class="link"
+          routerLink=""
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          (click)="scrollToTop()"
+          class="link"
+          routerLink="aboutus"
+          routerLinkActive="active-link"
+          >About</a
+        >
+      </li>
+      <li>
+        <a
+          (click)="scrollToTop()"
+          class="link"
+          routerLink="services"
+          routerLinkActive="active-link"
+          >Services</a
+        >
+      </li>
+      <li>
+        <a
+          (click)="scrollToTop()"
+          class="link"
+          routerLink="allcars"
+          routerLinkActive="active-link"
+          >Cars</a
+        >
+      </li>
+      <li>
+        <a
+          (click)="scrollToTop()"
+          class="link"
+          routerLink="events"
+          routerLinkActive="active-link"
+          >Events</a
+        >
+      </li>
+      <li>
+        <a
+          (click)="scrollToTop()"
+          class="link"
+          routerLink="contact"
+          routerLinkActive="active-link"
+          >Contact</a
+        >
+      </li>
+      @if (authService.currentUserSig() === null) {
+      <div class="flex">
+        <li>
+          <a class="link" routerLink="login" routerLinkActive="active-link"
+            >Login</a
+          >
+        </li>
+        <li>
+          <a class="link" routerLink="register" routerLinkActive="active-link"
+            >Register</a
+          >
+        </li>
+      </div>
+      } @if (authService.currentUserSig()) {
+      <div class="flex">
+        <li>
+          <a class="link" routerLink="profile" routerLinkActive="active-link">{{
+            authService.currentUserSig()?.name
+          }}</a>
+        </li>
+        <li>
+          <a class="link pointer" (click)="logout()">Logout</a>
+        </li>
+      </div>
+      }
+    </div>
+  </ul>
+</div>

@@ -1,0 +1,144 @@
+.cards-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cards-group .btn {
+  height: 3rem;
+  width: 3rem;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.151);
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  margin-bottom: 5rem;
+}
+
+.cards-group .btn:disabled {
+  color: black;
+}
+
+.comment-cards-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  padding: 0.7rem;
+  width: 18.4rem;
+  scroll-behavior: smooth;
+}
+
+.comment-card {
+  height: 15rem;
+  position: relative;
+}
+
+.comment-card:last-child div{
+  margin-right: 0rem;
+}
+
+.comment-card div {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  padding: 0.7rem;
+  margin-right: 1rem;
+  transition: all 0.5s;
+  border: 1px solid transparent;
+  max-width: 17rem;
+  min-width: 17rem;
+  text-align: center;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.comment-card div:hover {
+  transform: scale(1.05);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.comment-card div:hover ~ .reacts {
+  display: flex;
+}
+
+.reacts:hover {
+  display: flex;
+}
+
+.reacts:hover::before {
+  z-index: -1;
+}
+
+.circle {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.circles-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.active-circle {
+  background-color: rgba(1, 210, 140, 0.548);
+}
+
+.reacts::before{
+  content: '';
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0.3rem;
+  transform: translate(-0.4rem, -2.5rem);
+}
+
+.reacts {
+  display: none;
+  padding: 0.3rem;
+  gap: 1.05rem;
+  transform: translate(-0.4rem, 0px);
+  position: absolute;
+  bottom: -0.4rem;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.icon {
+  width: 3rem;
+  background-color: transparent;
+}
+
+.icon-love{
+  width: 2.3rem;
+}
+.icon-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reacts span {
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.reacts span:hover {
+  scale: 1.2;
+}
+
+.reaction-container {
+  display: flex;
+}

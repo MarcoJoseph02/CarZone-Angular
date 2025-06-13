@@ -1,0 +1,28 @@
+<div class="comments-container">
+  <h2 class="heading">What Customers Says</h2>
+  <app-comments-cards
+    [comments]="comments"
+    [userReactions]="userReactions"
+    (reactionChange)="getAllComments(); getAllReactions()"
+  ></app-comments-cards>
+
+  <button class="btn add-comment-btn" (click)="onAddComment()">
+    Add a comment
+  </button>
+
+  @if (addCommentWindow) {
+  <div class="addCommentContainer">
+    <div class="commentForm">
+      <p (click)="onCancelComment()" class="close">x</p>
+      <textarea [(ngModel)]="userComment"></textarea>
+      <button class="add-comment-btn wide" (click)="submitComment()">
+        Add
+      </button>
+    </div>
+  </div>
+  } @if (commentAddedSuccess) {
+  <p class="center">Comment Successfully added!</p>
+  }@else if (commentAddedError) {
+  <p class="center">Failed to add the comment please try again!</p>
+  }
+</div>

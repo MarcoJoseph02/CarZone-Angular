@@ -1,0 +1,30 @@
+<div class="gallery-container">
+  <div class="gallery-main">
+    <button
+      class="gallery-btn prev"
+      (click)="prevImage()"
+      aria-label="Previous"
+    >
+      &#10094;
+    </button>
+    <img
+      [@fadeInOut]="slideState"
+      class="gallery-image"
+      [src]="images[currentIndex]"
+      [alt]="'Image ' + (currentIndex + 1)"
+    />
+    <button class="gallery-btn next" (click)="nextImage()" aria-label="Next">
+      &#10095;
+    </button>
+  </div>
+  <div class="gallery-thumbnails">
+    @for (img of images; track $index) {
+    <img
+      [src]="img"
+      [alt]="'Thumbnail ' + ($index + 1)"
+      [class.active]="$index === currentIndex"
+      (click)="goToImage($index)"
+    />
+    }
+  </div>
+</div>

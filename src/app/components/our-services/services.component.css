@@ -1,0 +1,30 @@
+.services-container{
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    padding: 5em 0;
+
+    background-color: #F7F7F7;
+}
+
+.service-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 50%;
+
+    gap: 2em;
+
+    margin-top: 5em;
+}
+
+.heading{
+    font-size: 5em;
+}
+
+.sub-heading{
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, 0.8);
+}

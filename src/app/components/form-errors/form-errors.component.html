@@ -1,0 +1,10 @@
+@if (isVisible) {
+<ul class="error-list">
+  @for (error of errorKeys; track error) { @if (errors[error]) {
+  <li class="error-message">
+    {{ errors[error] }}
+  </li>
+  } }
+  <button class="close-button" (click)="close()">X</button>
+</ul>
+}

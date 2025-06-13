@@ -1,0 +1,151 @@
+.details-container {
+  position: fixed;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 75vh;
+  width: 75%;
+  margin-top: 12.5vh;
+  margin-left: 12.5%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(230, 228, 228, 0.8);
+  backdrop-filter: blur(3px);
+  border-radius: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.089);
+  overflow: auto;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  margin: 2rem;
+  cursor: pointer;
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding-top: 2rem;
+  width: 50vw;
+}
+
+.event-name {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.contents-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-height: 7rem;
+  overflow: auto;
+  margin-top: 0.8rem;
+}
+
+.event-header {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.event-text {
+  font-weight: 300;
+}
+
+.location-container {
+  display: flex;
+  gap: 2rem;
+}
+.event-actions {
+  align-self: end;
+  margin-right: 10rem;
+  display: flex;
+  gap: 1rem;
+}
+.event-actions button {
+  padding: 0.5rem 2.2rem;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: white;
+  transition: all 0.4s, scale 0.1s;
+}
+
+.event-actions button:hover {
+  border: 1px solid black;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.event-actions button:active {
+  scale: 0.96;
+}
+
+.event-actions .button-delete {
+  background-color: red;
+}
+.event-actions .button-edit {
+  background-color: darkkhaki;
+}
+
+.icon {
+  width: 18px;
+}
+
+.icon-small {
+  width: 15px;
+  margin-left: 0.5rem;
+}
+
+.icon-center {
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  width: 98%;
+  padding: 0.5rem;
+}
+
+app-tag-input {
+  width: 100%;
+  margin: auto;
+}
+
+.form-control-container {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+}
+
+.status-container {
+  display: flex;
+  width: 100%;
+  gap: 0.6rem;
+}
+
+.status-container input {
+  padding: 0.5rem 1.7rem;
+  border-radius: 7px;
+  border: 1px solid black;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.selection {
+  background-color: #005cbb;
+  color: white;
+}
+
+.bg-White {
+  background-color: white;
+  color: black;
+}

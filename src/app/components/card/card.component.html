@@ -1,0 +1,27 @@
+<div class="car-card">
+    @if (hasImage) {
+        <app-image-loader
+          [imageSource]="car.main_image"
+          [carModel]="car.model"
+          class="car-card-img"
+        ></app-image-loader>
+    }
+  <div>
+    <p>
+      Model: <span class="underlined bold">{{ car.model }}</span>
+    </p>
+    <p>
+      Year: <span class="underlined bold">{{ car.year }}</span>
+    </p>
+    <p>
+      doors: <span class="underlined bold">{{ car.doors }}</span>
+    </p>
+    <p>
+      Price: <span class="underlined bold">{{ car.price | egpCurrency }}</span>
+    </p>
+  </div>
+  <div class="car-card-buttons">
+    <a routerLink="/soon" class="button-link">Book</a>
+    <a [routerLink]="car.id.toString()" class="button-link">More Details</a>
+  </div>
+</div>

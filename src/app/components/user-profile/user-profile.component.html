@@ -1,0 +1,94 @@
+<div class="profile-container">
+  <form [formGroup]="profileForm">
+    <div class="profile-header">
+      <h1 class="profile-welcome">
+        <span class="welcome-text">Welcome</span>
+        @if (editMode) {
+        <span class="form-group">
+          <input type="text" formControlName="fname" />
+          <input type="text" formControlName="lname" />
+        </span>
+        }@else {
+        <span class="underlined">{{ user?.name }}</span>
+        }
+      </h1>
+      @if (editMode) {
+      <span class="form-group">
+        <input type="email" formControlName="email" />
+      </span>
+      }@else{
+      <p>{{ user?.email }}</p>
+      }
+    </div>
+    <div class="profile-details">
+      <div class="container">
+        <h2>Phone</h2>
+        @if (editMode) {
+        <span class="form-group">
+          <input type="number" formControlName="phone" />
+        </span>
+        }@else{
+        <p>{{ user?.phone_no }}</p>
+        }
+      </div>
+      <div class="container">
+        <h2>Address</h2>
+        @if (editMode) {
+        <span class="form-group">
+          <input type="text" formControlName="address" />
+        </span>
+        }@else{
+        <p>{{ user?.address }}</p>
+        }
+      </div>
+    </div>
+  </form>
+
+  <div class="profile-actions">
+    <div class="container">
+      <h2>User actions</h2>
+      <button class="user-action-btn" (click)="toggleEditProfile()">{{ editBtnTitle }}</button>
+      <button class="user-action-btn" (click)="logout()">Logout</button>
+    </div>
+
+    <div class="profile-comments" [formGroup]="commentsFormGroup">
+      <div class="container" formArrayName="comments">
+        <h2>Comments</h2>
+        @for (comment of comments; track $index;let i=$index) {
+        <div class="comment-card">
+          @if (comment.isEdit) {
+          <input
+            class="comment-card-input"
+            type="text"
+            id="comment {{ i }}"
+            [value]="comment.body"
+            [formControlName]="i"
+          />
+          }@else {
+          <p>{{ comment.body }}</p>
+          }
+          <div class="btn-container">
+            <button class="btn" (click)="editComment(comment, i)">
+              @if (comment.isEdit) { Save }@else { Edit }
+            </button>
+            <button class="btn-delete" (click)="deleteComment(comment)">
+              Delete
+            </button>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+
+    <div class="profile-comments">
+      <div class="container">
+        <h2>Booked cars</h2>
+        @for (car of cars; track $index;let i=$index) {
+        <div class="comment-card">
+          <p>{{ car.model }} ({{ car.year }})</p>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

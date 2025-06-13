@@ -1,0 +1,304 @@
+<div class="details-container" [formGroup]="eventForm">
+  <div class="close" (click)="closeWindow()">X</div>
+  <div class="event-details">
+    <div id="nameAndContentContainer">
+      @if (editMode) { Name:
+      <input
+        class="form-control"
+        type="text"
+        formControlName="eventName"
+        id="eventName"
+      />
+      }@else {
+      <span class="event-name">
+        {{ event.event_name }}
+      </span>
+      }
+      <div class="contents-container">
+        @if (editMode) {
+        <app-tag-input [(tags)]="eventContent"></app-tag-input>
+        <!-- <input type="text" formControlName="eventContent" id="eventContent" /> -->
+        }@else { @for (content of eventContent; track $index; let i=$index) {
+        <app-pill
+          pillStyle="small"
+          [colorIndex]="i % 6"
+          [text]="eventContent[i]"
+        ></app-pill>
+        } }
+      </div>
+    </div>
+
+    <div id="descriptionContainer">
+      <div class="event-header">
+        <span> Description </span>
+        <svg
+          viewBox="-8 0 117 117"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          fill="#000000"
+          class="icon"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <title></title>
+            <desc></desc>
+            <defs></defs>
+            <g
+              fill="none"
+              fill-rule="evenodd"
+              id="Page-1"
+              stroke="none"
+              stroke-width="1"
+            >
+              <g fill-rule="nonzero" id="doc">
+                <path
+                  d="M4.7,116.5 L96.3,116.5 C98.6,116.5 100.4,114.7 100.4,112.4 L100.4,4.5 C100.4,2.2 98.6,0.4 96.3,0.4 L27.6,0.4 C27.3,0.4 26.9,0.4 26.6,0.5 C26.5,0.5 26.4,0.6 26.4,0.6 C26.1,0.7 25.9,0.8 25.6,0.9 C25.5,1 25.4,1 25.3,1.1 C25,1.3 24.7,1.5 24.5,1.8 L1.6,28.8 C1.3,29.1 1.1,29.5 0.9,29.9 C0.8,30 0.8,30.2 0.8,30.3 C0.7,30.6 0.7,30.9 0.6,31.2 C0.6,31.3 0.6,31.3 0.6,31.4 L0.6,112.3 C0.6,114.7 2.5,116.5 4.7,116.5 Z M23.5,15.7 L23.5,27.5 L13.5,27.5 L23.5,15.7 Z M8.8,35.6 L27.6,35.6 C29.9,35.6 31.7,33.8 31.7,31.5 L31.7,8.6 L92.2,8.6 L92.2,108.3 L8.8,108.3 L8.8,35.6 Z"
+                  fill="#4A4A4A"
+                  id="Shape"
+                ></path>
+                <path
+                  d="M80,44.5 L21,44.5 C18.7,44.5 16.9,46.3 16.9,48.6 C16.9,50.9 18.7,52.7 21,52.7 L80,52.7 C82.3,52.7 84.1,50.9 84.1,48.6 C84.1,46.3 82.3,44.5 80,44.5 Z"
+                  fill="#17AB13"
+                  id="Shape"
+                ></path>
+                <path
+                  d="M80,64.3 L21,64.3 C18.7,64.3 16.9,66.1 16.9,68.4 C16.9,70.7 18.7,72.5 21,72.5 L80,72.5 C82.3,72.5 84.1,70.7 84.1,68.4 C84.1,66.2 82.3,64.3 80,64.3 Z"
+                  fill="#17AB13"
+                  id="Shape"
+                ></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      @if (editMode) {
+      <input
+        class="form-control"
+        type="text"
+        formControlName="eventDescription"
+        id="eventDescription"
+      />
+      } @else {
+      <span class="event-text">
+        {{ event.event_description }}
+      </span>
+      }
+    </div>
+
+    <div id="LocationAndTimeContainer">
+      <div>
+        <span class="event-header">Location And Time </span>
+        <svg
+          viewBox="0 0 117 117"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          fill="#000000"
+          class="icon"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <title></title>
+            <desc></desc>
+            <defs></defs>
+            <g
+              fill="none"
+              fill-rule="evenodd"
+              id="Page-1"
+              stroke="none"
+              stroke-width="1"
+            >
+              <g fill-rule="nonzero" id="alarm-clock">
+                <path
+                  d="M10.2,36.7 C7.2,43.4 5.4,50.8 5.4,58.6 C5.4,71.4 10,83.5 18.2,93.1 L1.6,109.8 C-1.55431223e-15,111.4 -1.55431223e-15,114 1.6,115.6 C2.4,116.4 3.4,116.8 4.5,116.8 C5.5,116.8 6.6,116.4 7.4,115.6 L24,98.9 C33.6,107.1 45.7,111.6 58.5,111.6 C71.6,111.6 83.7,106.8 92.9,98.8 L109.5,115.5 C110.3,116.3 111.3,116.7 112.4,116.7 C113.4,116.7 114.5,116.3 115.3,115.5 C116.9,113.9 116.9,111.3 115.3,109.7 L98.7,93 C106.7,83.7 111.5,71.7 111.5,58.5 C111.5,50.7 109.8,43.3 106.7,36.6 C112.6,33.2 116.5,26.8 116.5,19.7 C116.5,8.9 107.7,0.1 96.9,0.1 C89.8,0.1 83.4,4 80,10 C73.4,7 66.1,5.4 58.4,5.4 C50.7,5.4 43.4,7.1 36.8,10 C33.4,4 27,0.1 19.9,0.1 C9.2,0.3 0.4,9 0.4,19.8 C0.4,26.9 4.3,33.2 10.2,36.7 Z M97,8.4 C103.3,8.4 108.4,13.5 108.4,19.8 C108.4,23.8 106.3,27.5 102.9,29.5 C102.8,29.4 102.8,29.3 102.7,29.2 C102,28.2 101.3,27.2 100.5,26.2 C100.1,25.7 99.8,25.2 99.5,24.8 C98.5,23.5 97.4,22.3 96.2,21.2 C95.6,20.5 94.9,19.9 94.2,19.3 C93.5,18.7 92.8,18 92.1,17.4 C91.4,16.9 90.7,16.4 90,15.9 C89.3,15.3 88.5,14.8 87.7,14.3 C87.5,14.2 87.4,14.1 87.2,13.9 C89.3,10.6 93,8.4 97,8.4 Z M30.3,23.7 C31.2,23 32.1,22.3 33,21.7 C33.2,21.6 33.4,21.4 33.6,21.3 C40.7,16.5 49.3,13.8 58.5,13.8 C67.7,13.8 76.2,16.6 83.3,21.3 C83.5,21.5 83.7,21.6 84,21.8 C84.9,22.4 85.8,23.1 86.6,23.8 C86.8,24 87,24.1 87.2,24.3 C88.2,25.2 89.2,26 90.2,27 C91.1,27.9 91.9,28.9 92.8,29.8 C93,30.1 93.3,30.4 93.5,30.7 C94.1,31.4 94.7,32.2 95.2,33 C95.4,33.3 95.7,33.6 95.9,33.9 C100.6,41 103.4,49.5 103.4,58.7 C103.4,70.4 98.9,81 91.6,89 C90.9,89.2 90.3,89.5 89.7,90 C89.2,90.5 88.9,91.2 88.7,91.9 C80.7,99.2 70.1,103.7 58.5,103.7 C46.2,103.7 34.8,98.8 26.2,90 C18,81.6 13.6,70.5 13.6,58.8 C13.6,49.6 16.4,41.1 21.1,34 C21.3,33.7 21.5,33.4 21.7,33.1 C22.3,32.3 22.8,31.5 23.4,30.8 C23.6,30.5 23.8,30.2 24.1,30 C25.8,28 27.7,26.1 29.7,24.4 C29.9,24 30.1,23.8 30.3,23.7 Z M20,8.4 C24,8.4 27.7,10.6 29.7,13.9 C29.5,14 29.4,14.1 29.2,14.3 C28.4,14.8 27.7,15.4 27,15.9 C26.3,16.4 25.6,16.9 24.9,17.5 C24.2,18.1 23.6,18.7 22.9,19.3 C22,20.1 21.2,20.9 20.3,21.8 C19.3,22.8 18.3,23.9 17.4,25 C17,25.5 16.7,26 16.3,26.5 C15.6,27.5 14.8,28.4 14.2,29.4 C14.1,29.5 14.1,29.6 14,29.7 C10.7,27.7 8.5,24 8.5,20 C8.6,13.5 13.7,8.4 20,8.4 Z"
+                  fill="#4A4A4A"
+                  id="Shape"
+                ></path>
+                <path
+                  d="M58.5,62.7 L76.1,62.7 C78.4,62.7 80.2,60.9 80.2,58.6 C80.2,56.3 78.4,54.5 76.1,54.5 L62.6,54.5 L62.6,33.2 C62.6,30.9 60.8,29.1 58.5,29.1 C56.2,29.1 54.4,30.9 54.4,33.2 L54.4,58.6 C54.4,60.8 56.2,62.7 58.5,62.7 Z"
+                  fill="#17AB13"
+                  id="Shape"
+                ></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      @if (editMode) {
+      <div class="form-control-container">
+        <input
+          class="form-control"
+          type="text"
+          formControlName="eventLocation"
+          id="location"
+        />
+        <input
+          class="form-control"
+          type="date"
+          formControlName="eventDate"
+          id="date"
+        />
+        <input
+          class="form-control"
+          type="time"
+          formControlName="eventTime"
+          id="time"
+        />
+      </div>
+      }@else {
+      <div class="location-container">
+        <span class="event-text">
+          {{ event.event_location }}
+        </span>
+        <span class="event-text">{{
+          event.event_date | date : "EEEE d MMM yyyy"
+        }}</span>
+        <span class="event-text">{{ eventTime }}</span>
+      </div>
+      }
+    </div>
+
+    <div id="statusContainer">
+      <div>
+        <span class="event-header">Status</span>
+      </div>
+      <div class="icon-center">
+        @if (editMode) {
+        <div class="status-container">
+          <input
+            [ngClass]="{
+              'bg-White': !isActive('active'),
+              selection: isActive('active')
+            }"
+            type="button"
+            (click)="setEventStatus('active')"
+            value="Active"
+          />
+          <input
+            [ngClass]="{
+              'bg-White': !isActive('inactive'),
+              selection: isActive('inactive')
+            }"
+            type="button"
+            (click)="setEventStatus('inactive')"
+            value="Inactive"
+          />
+        </div>
+        }@else {
+        <span class="event-text">{{
+          event.event_status.toLocaleUpperCase()
+        }}</span>
+        @if(event.event_status.toLocaleLowerCase()==='active'){
+        <svg
+          class="icon-small"
+          viewBox="0 0 117 117"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          fill="#000000"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <title></title>
+            <desc></desc>
+            <defs></defs>
+            <g
+              fill="none"
+              fill-rule="evenodd"
+              id="Page-1"
+              stroke="none"
+              stroke-width="1"
+            >
+              <g fill-rule="nonzero" id="correct">
+                <path
+                  d="M34.5,55.1 C32.9,53.5 30.3,53.5 28.7,55.1 C27.1,56.7 27.1,59.3 28.7,60.9 L47.6,79.8 C48.4,80.6 49.4,81 50.5,81 C50.6,81 50.6,81 50.7,81 C51.8,80.9 52.9,80.4 53.7,79.5 L101,22.8 C102.4,21.1 102.2,18.5 100.5,17 C98.8,15.6 96.2,15.8 94.7,17.5 L50.2,70.8 L34.5,55.1 Z"
+                  fill="#17AB13"
+                  id="Shape"
+                ></path>
+                <path
+                  d="M89.1,9.3 C66.1,-5.1 36.6,-1.7 17.4,17.5 C-5.2,40.1 -5.2,77 17.4,99.6 C28.7,110.9 43.6,116.6 58.4,116.6 C73.2,116.6 88.1,110.9 99.4,99.6 C118.7,80.3 122,50.7 107.5,27.7 C106.3,25.8 103.8,25.2 101.9,26.4 C100,27.6 99.4,30.1 100.6,32 C113.1,51.8 110.2,77.2 93.6,93.8 C74.2,113.2 42.5,113.2 23.1,93.8 C3.7,74.4 3.7,42.7 23.1,23.3 C39.7,6.8 65,3.9 84.8,16.2 C86.7,17.4 89.2,16.8 90.4,14.9 C91.6,13 91,10.5 89.1,9.3 Z"
+                  fill="#4A4A4A"
+                  id="Shape"
+                ></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+        }@else {
+        <svg
+          class="icon-small"
+          viewBox="0 0 117 117"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          fill="#000000"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <title></title>
+            <desc></desc>
+            <defs></defs>
+            <g
+              fill="none"
+              fill-rule="evenodd"
+              id="Page-1"
+              stroke="none"
+              stroke-width="1"
+            >
+              <g fill-rule="nonzero" id="cancel">
+                <path
+                  d="M58.5,116.6 C90.5,116.6 116.6,90.6 116.6,58.5 C116.6,26.4 90.5,0.4 58.5,0.4 C26.5,0.4 0.4,26.5 0.4,58.5 C0.4,90.5 26.5,116.6 58.5,116.6 Z M58.5,8.6 C86,8.6 108.4,31 108.4,58.5 C108.4,86 86,108.4 58.5,108.4 C31,108.4 8.6,86 8.6,58.5 C8.6,31 31,8.6 58.5,8.6 Z"
+                  fill="#4A4A4A"
+                  id="Shape"
+                ></path>
+                <path
+                  d="M36.7,79.7 C37.5,80.5 38.5,80.9 39.6,80.9 C40.7,80.9 41.7,80.5 42.5,79.7 L58.5,63.7 L74.5,79.7 C75.3,80.5 76.3,80.9 77.4,80.9 C78.5,80.9 79.5,80.5 80.3,79.7 C81.9,78.1 81.9,75.5 80.3,73.9 L64.3,57.9 L80.3,41.9 C81.9,40.3 81.9,37.7 80.3,36.1 C78.7,34.5 76.1,34.5 74.5,36.1 L58.5,52.1 L42.5,36.1 C40.9,34.5 38.3,34.5 36.7,36.1 C35.1,37.7 35.1,40.3 36.7,41.9 L52.7,57.9 L36.7,73.9 C35.1,75.5 35.1,78.1 36.7,79.7 Z"
+                  fill="#17AB13"
+                  id="Shape"
+                ></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+        } }
+      </div>
+    </div>
+
+    @if (event) {
+    <div id="idContainer">
+      <div>
+        <span class="event-header">Event ID</span>
+      </div>
+      <span class="event-text">{{ event.id }}</span>
+    </div>
+    }
+  </div>
+
+  <div class="event-actions">
+    <button class="button-edit" (click)="toggleEditMode()">
+      {{ editButtonTitle }}
+    </button>
+    <button class="button-delete" (click)="deleteEvent()">Delete</button>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+.card-title {
+  padding: 0.7em;
+  background-color: white;
+  border-bottom: 1px solid black;
+  color: black;
+
+  border-radius: 4px;
+
+  font-weight: 600;
+
+  transition: 0.3s ease-in;
+}
+
+.card {
+  width: 15em;
+  height: 15em;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.8);
+
+  padding: 1em;
+
+  border-radius: 8px;
+
+  font-weight: 300;
+
+  transition: 0.2s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.4) 1px 2px 2px;
+  border: 1px solid transparent;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateX(-0.25em) translateY(-0.25em);
+  border: 1px solid #171717;
+  box-shadow: 5px 5px 0px #666666;
+}
+
+.card:hover .card-title{
+    background-color: rgba(1, 210, 140, 0.548);
+}
+
+.card:hover fa-icon{
+  color: rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in;
+}

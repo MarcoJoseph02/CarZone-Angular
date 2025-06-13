@@ -1,0 +1,146 @@
+.profile-container {
+  padding: 10rem;
+}
+
+.profile-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.profile-details {
+  margin-top: 2rem;
+}
+
+.profile-details .container,
+.profile-actions .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 56vw;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.form-container{
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.profile-actions .container .user-action-btn {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: rgb(1, 210, 142);;
+  border-color: #117a8b;
+  
+}
+
+.welcome-text {
+  margin-right: 0.5rem;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.form-group input {
+  padding: 0.5rem;
+  font-family: inherit;
+}
+
+.profile-welcome {
+  display: flex;
+}
+
+.hidden {
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.otp {
+  justify-content: right !important;
+  width: fit-content;
+}
+
+.profile-comments .container {
+  display: flex;
+  flex-direction: column;
+  width: 56vw;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.comment-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: rgb(243, 240, 240);
+  border-radius: 7px;
+  margin: 0.5rem 0;
+  position: relative;
+
+  transition: 0.1s linear;
+  cursor: pointer;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+  width: 100%;
+}
+
+.btn-container .btn {
+  background-color: rgb(0, 123, 255);
+  color: white;
+  border: 1px solid;
+  border-color: rgb(0, 123, 255);
+}
+
+.comment-card .btn,
+.comment-card .btn-delete {
+  font-family: inherit;
+  padding: 0.2rem 2rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background-color: rgb(200, 35, 51);
+  color: white;
+  border: 1px solid;
+  border-color: rgb(220, 53, 69);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 300%;
+  border-radius: 50%;
+  background-color: rgb(1, 210, 142);
+  position: absolute;
+  right: -250px;
+  transition: right 0.4s 0s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  z-index: 1;
+  align-self: center;
+}
+.comment-card:hover .btn-container {
+  right: 0px;
+}
+
+.comment-card-input{
+  padding: 0.3rem;
+  width: 100%;
+  font-family: inherit;
+}

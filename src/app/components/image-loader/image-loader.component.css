@@ -1,0 +1,66 @@
+.car-card-img {
+  width: 100%;
+  opacity: 0;
+}
+
+.image-loaded {
+  opacity: 1;
+}
+
+.intersectContainer {
+  display: felx;
+  width: auto;
+  height: 250px;
+  border: solid 1px #ff3d00;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.loader {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+}
+
+.loader-loaded {
+  display: none;
+}
+
+.loader:before,
+.loader:after {
+  translate: -50% -50%;
+  width: 60px;
+  height: 60px;
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+}
+.loader:after {
+  box-shadow: 0 2px 0 #ff3d00 inset;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.unavailable {
+  background: url("/cars/Unavicon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  right: -11px;
+  top: -11px;
+  transform: rotate(45deg);
+}

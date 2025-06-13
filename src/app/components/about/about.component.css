@@ -1,0 +1,95 @@
+.about-container {
+  padding-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10rem;
+}
+
+.section {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10rem;
+}
+
+.feature-list {
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  gap: 4rem;
+  flex-direction: column;
+}
+
+.feature-list li {
+  width: 100%;
+  height: 50vh;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212121;
+  margin: 2rem 0;
+}
+
+.easy-booking,
+.real-time-availability,
+.flexible-refund-policy,
+.maintenance-tracking,
+.secure-payments,
+.personalized-experience {
+  position: relative;
+  color: white;
+  text-shadow: 3px 5px 2px #474747, 3px 5px 2px #474747;
+  font-size: 2rem;
+}
+
+.bg-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+  filter: blur(3px);
+}
+
+.easy-booking-img {
+  background-image: url("/cars/1_1.jpeg");
+}
+
+.real-time-availability-img {
+  background-image: url("/cars/2.png");
+}
+
+.flexible-refund-policy-img {
+  background-image: url("/cars/3.jpeg");
+}
+
+.maintenance-tracking-img {
+  background-image: url("/cars/4_4.jpeg");
+}
+
+.secure-payments-img {
+  background-image: url("/cars/5.jpeg");
+}
+
+.personalized-experience-img {
+  background-image: url("/cars/6_6.jpeg");
+}
+
+.subtitle{
+  color: #474747;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}

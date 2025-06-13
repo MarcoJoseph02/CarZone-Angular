@@ -1,0 +1,65 @@
+.welcome-container {
+  height: 100vh;
+
+  background-image: url("/cars/Welcome.jpg");
+  /* background-image: url("/CarZone/cars/Welcome.jpg"); */
+  background-position: top left;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20vh;
+}
+.welcome-text {
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  text-shadow: 2px 2px 0px rgb(32, 44, 45), 5px 4px 0px rgba(32, 44, 45, 0.15);
+  font-style: italic;
+
+  gap: 0.5em;
+}
+.welcome-text-container {
+  display: flex;
+}
+.space {
+  width: 50vw;
+}
+.welcome-header {
+  padding-top: 20vh;
+  color: white;
+  font-size: 30px;
+}
+
+.large {
+  font-size: 3em;
+}
+.medium {
+  font-size: 2em;
+  font-weight: bold;
+}
+.small {
+  font-size: 1.5em;
+}
+.more-btn{
+  width: 17em;
+  margin-top: 1em;
+  padding: 1em 2em;
+
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 12px;
+
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+
+  cursor: pointer;
+}
+.more-btn:hover{
+  background-color: rgba(1, 210, 140, 0.548);
+  color: white;
+}

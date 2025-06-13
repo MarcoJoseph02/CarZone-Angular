@@ -1,0 +1,36 @@
+.eventsContainer {
+  padding: 7em 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 65%;
+  margin: auto;
+}
+
+.page-title{
+  font-size: 3em;
+}
+
+.eventActions{
+  margin: 2rem;
+}
+
+.add-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eventActions button{
+  padding: 0.5rem 1rem;
+  background-color: #3D40D5;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.eventActions .icon{
+  width: 17px;
+  margin-left: 0.5rem;
+}

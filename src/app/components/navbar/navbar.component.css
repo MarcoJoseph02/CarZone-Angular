@@ -1,0 +1,39 @@
+.navbar-container {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+.transition-04{
+  transition: 0.4s;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+.navbar .logo {
+  width: 100px;
+}
+.navbar li {
+  padding: 1em;
+}
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+.navbar-links .link {
+  text-decoration: none;
+  color: white;
+}
+.navbar-links .link:hover {
+  color: rgb(1, 210, 142);
+}
+.black-nav {
+  background-color: black;
+  color: white;
+}
+
+.navbar-links .link.active-link {
+  color: rgb(1, 210, 142);
+  text-decoration: underline;
+}

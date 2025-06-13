@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+
+@if (spinnerServices.spinnerCounter$ | async) {
+<div class="spinner-container">
+  <span class="loader"></span>
+  <span class="loading">Loading ...</span>
+</div>
+}
+
+<router-outlet></router-outlet>
+
+@if (!this.router.url.split('/')[2]) {
+<app-footer></app-footer>
+}

@@ -1,0 +1,23 @@
+.error-message{
+    color: red;
+    font-size: 0.9em;
+}
+.error-list{
+    list-style: none;
+    padding: 1em;
+    margin: 0;
+
+    border: red solid 1px;
+    border-radius: 5px;
+
+    position: relative;
+}
+
+.close-button{
+    position: absolute;
+    top: 1.2em;
+    right: 1.2em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

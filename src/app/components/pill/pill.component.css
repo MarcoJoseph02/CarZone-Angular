@@ -1,0 +1,58 @@
+.animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 100px;
+  font-weight: 600;
+  color: white;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.animated-button-big {
+  font-size: 0.8rem;
+  padding: 8px 24px;
+}
+.animated-button-small {
+  font-size: 0.7rem;
+  padding: 8px 12px;
+  font-weight: 500;
+}
+.animated-button-blue {
+  background-color: blue;
+}
+.animated-button-green {
+  background-color: green;
+}
+.animated-button-yellow {
+  background-color: yellow;
+  color: black;
+}
+.animated-button-red {
+  background-color: red;
+}
+.animated-button-cyan {
+  background-color: cyan;
+  color: black;
+}
+.animated-button-magenta {
+  background-color: magenta;
+}
+
+.animated-button .close {
+  cursor: pointer;
+  padding: 0.1rem;
+}
+
+.animated-button-disabled {
+  background-color: gray;
+}
+
+.animated-button:active {
+  scale: 0.85;
+  box-shadow: 0 0 0 4px white;
+}
+
+.text {
+  user-select: none;
+}

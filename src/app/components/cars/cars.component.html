@@ -1,0 +1,84 @@
+<div class="cars-container">
+  <div class="flex baseline cars-header-container">
+    <h2 class="pageTitle">Our Cars</h2>
+
+    <div class="flex baseline paggination-container">
+      <div class="flex paggination">
+        <p>Show :</p>
+        <span (click)="paginate(5, true)" class="pageNo">5</span><span>/</span>
+        <span (click)="paginate(10, true)" class="pageNo">10</span
+        ><span>/</span>
+        <span (click)="paginate(15, true)" class="pageNo">15</span
+        ><span>/</span>
+        <span (click)="paginate(20, true)" class="pageNo">20</span>
+      </div>
+
+      <div class="paste-button">
+        <button class="button">Sort &nbsp; ▼</button>
+        <div class="dropdown-content">
+          <a class="dropdown-item" id="top" (click)="sortCars('Default')"
+            >Default sorting</a
+          >
+          <a class="dropdown-item" id="middle" (click)="sortCars('Model')"
+            >Sort by model</a
+          >
+          <a class="dropdown-item" id="middle" (click)="sortCars('Year')"
+            >Sort by year</a
+          >
+          <a class="dropdown-item" id="middle" (click)="sortCars('PriceLTH')"
+            >Sort by price: low to high</a
+          >
+          <a class="dropdown-item" id="bottom" (click)="sortCars('PriceHTL')"
+            >Sort by price: high to low</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="car-card-container">
+    @for (car of paginatedCars; track car.id) {
+    <div class="car-card">
+      <app-image-loader
+        [imageSource]="car.main_image"
+        [carModel]="car.model"
+        [unavailable]="car.is_booked || car.is_sold"
+        class="car-card-img"
+      ></app-image-loader>
+      <div>
+        <p>
+          Model: <span class="underlined bold">{{ car.model }}</span>
+        </p>
+        <p>
+          Year: <span class="underlined bold">{{ car.year }}</span>
+        </p>
+        <p>
+          doors: <span class="underlined bold">{{ car.doors }}</span>
+        </p>
+        <p>
+          Price: <span class="underlined bold">{{ car.price | egpCurrency  }}</span>
+        </p>
+      </div>
+
+      <div class="car-card-buttons">
+        <app-stripe class="full-width" title="Book" [car]="car"></app-stripe>
+        <a [routerLink]="car.id.toString()" class="button-link">More Details</a>
+      </div>
+    </div>
+    }
+  </div>
+
+  <div class="paginator">
+    @for (pageNo of totalPagesArr; track $index) {
+    <span
+      (click)="changePage(pageNo)"
+      [ngClass]="{ pageNo: true, pageNoActive: pageNo === currentPage }"
+    >
+      {{ pageNo }}
+    </span>
+    <span class="paginator-splitter">/</span>
+    }
+  </div>
+
+  <div id="toastBox"></div>
+</div>

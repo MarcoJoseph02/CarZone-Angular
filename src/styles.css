@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.border {
+  border: 1px solid black;
+}
+
+.flex {
+  display: flex;
+}
+
+.f-center {
+  text-align: center;
+}
+
+.f-col {
+  flex-direction: column;
+}
+
+.baseline {
+  align-items: baseline;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.overflow-none {
+  overflow: hidden;
+}
+
+.toast {
+  width: 400px;
+  height: 80px;
+  background: #fff;
+  font-weight: 500;
+  margin: 15px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  position: relative;
+  transform: translateX(110%);
+  animation: moveleft 2.3s linear forwards;
+}
+
+@keyframes moveleft {
+  5% {
+    transform: translateX(0);
+  }
+  90% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(110%);
+  }
+}
+
+.toast svg {
+  width: 25px;
+  margin: 0 20px;
+}
+
+.toast::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: green;
+  animation: anim 2s linear forwards;
+}
+
+.toast-error::after {
+  background-color: red;
+}
+
+@keyframes anim {
+  100% {
+    width: 0;
+  }
+}
+
+.full-width{
+  width: 100%;
+}
+
+#toastBox {
+  position: fixed;
+  bottom: 30px;
+  right: 0px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+}

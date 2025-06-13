@@ -1,0 +1,56 @@
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h2>CAR <span>ZONE</span></h2>
+      <p>Your trusted car service center. Excellence is our drive.</p>
+    </div>
+    <div class="footer-links">
+      <h3 class="footer-title">Quick Links</h3>
+      <ul>
+        <li>
+          <a (click)="scrollToTop()" class="link" routerLink=""> Home </a>
+        </li>
+        <li>
+          <a (click)="scrollToTop()" class="link" routerLink="aboutus">About</a>
+        </li>
+        <li>
+          <a (click)="scrollToTop()" class="link" routerLink="services"
+            >Services</a
+          >
+        </li>
+        <li>
+          <a (click)="scrollToTop()" class="link" routerLink="allcars">Cars</a>
+        </li>
+        <li>
+          <a (click)="scrollToTop()" class="link" routerLink="events">Events</a>
+        </li>
+        <li>
+          <a (click)="scrollToTop()" class="link" routerLink="contact"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>Email: <a class="link" routerLink="contact"> Email us </a></p>
+      <p>Phone: <a class="link" href="tel:01557775652">01557775652</a></p>
+      <p>Address: Sheraton Al Matar, El Nozha, Cairo Governorate 4472111</p>
+    </div>
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <a href="#">
+        <fa-icon class="fa-brands" [icon]="faFacebook"></fa-icon>
+      </a>
+      <a href="#">
+        <fa-icon class="fa-brands" [icon]="faInstagram"></fa-icon>
+      </a>
+      <a href="#">
+        <fa-icon class="fa-brands" [icon]="faTwitter"></fa-icon>
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Car Zone. All Rights Reserved.</p>
+  </div>
+</footer>

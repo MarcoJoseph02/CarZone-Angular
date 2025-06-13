@@ -1,0 +1,55 @@
+<div class="contact-container">
+  <div class="content-data">
+    <h1>Contact Us</h1>
+    <br />
+    <h3>Branches</h3>
+    @for (singleMapData of googleMapData; track singleMapData.id) {
+    <div class="map-container">
+      <div>
+        <p>Branch: {{ singleMapData.name }}</p>
+        <p>Phone: {{ singleMapData.phone_no }}</p>
+      </div>
+      <app-map-display [googleMapData]="singleMapData"></app-map-display>
+    </div>
+    }
+  </div>
+  <div class="email-us">
+    <h3>Email Us</h3>
+    <div class="email-box">
+      <form class="form" [formGroup]="emailForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            formControlName="name"
+            id="name"
+            placeholder="First Last"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            formControlName="email"
+            id="email"
+            placeholder="email@examble.com"
+          />
+        </div>
+        <div class="form-group">
+          <label for="inquiry">How can we help you?</label>
+          <textarea formControlName="body" id="inquiry"></textarea>
+        </div>
+        <button type="button" (click)="sendEmail()" class="submit-btn">
+          Send
+        </button>
+        @if (emailSentNotification) {
+        <p>Your inquiry has been sent successfully!</p>
+        } @if (failToSendNotification) {
+        <p>Please fill missing data and try again!</p>
+        } @if(failedEmailSendingNotification){
+        <p>Something happed from our side! please try again!</p>
+        }
+      </form>
+    </div>
+  </div>
+</div>

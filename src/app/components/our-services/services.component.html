@@ -1,0 +1,9 @@
+<div class="services-container">
+  <h2 class="heading">Our Services</h2>
+  <p class="sub-heading">We have all cars from A to Z!</p>
+  <div class="service-card">
+    @for (card of ourServicesCards; track $index) {
+    <app-service-card [card]="card"></app-service-card>
+    }
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="cars-container">
+  <h2 class="heading">Our Top Cars</h2>
+  <div class="car-card-container">
+    @for (car of cars; track car.id) {
+    <div class="car-card">
+      <app-image-loader
+        [imageSource]="car.main_image"
+        [carModel]="car.model"
+        class="car-card-img"
+      ></app-image-loader>
+      <div>
+        <p>
+          Model: <span class="underlined bold">{{ car.model }}</span>
+        </p>
+        <p>
+          Year: <span class="underlined bold">{{ car.year }}</span>
+        </p>
+        <p>
+          doors: <span class="underlined bold">{{ car.doors }}</span>
+        </p>
+        <p>
+          Price:
+          <span class="underlined bold">{{ car.price | egpCurrency }}</span>
+        </p>
+      </div>
+      <div class="car-card-buttons">
+        <app-stripe class="full-width" title="Book Now" [car]="car"></app-stripe>
+        <a [routerLink]="'/allcars/' + car.id.toString()" class="button-link"
+          >More Details</a
+        >
+      </div>
+    </div>
+    }
+  </div>
+</div>

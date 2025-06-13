@@ -1,0 +1,32 @@
+.container {
+  background-color: white;
+}
+.tag-container {
+  border: 2px solid #ccc;
+  padding: 0.2rem;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.tag-container .tag {
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  background: #f2f2f2;
+}
+.tag .icon {
+  font-size: 16px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.tag-container input {
+  flex: 1;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}

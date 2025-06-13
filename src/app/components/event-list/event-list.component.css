@@ -1,0 +1,85 @@
+.event-list-items {
+  display: flex;
+  margin-bottom: 1rem;
+  gap: 0.7rem;
+}
+.event-list-item-date {
+  display: flex;
+  flex-direction: column;
+  width: 10em;
+  padding: 1em;
+  background-color: #f7f7f7;
+  border-radius: 7px;
+}
+.event-list-item-date .big-date {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.event-list-item-date .small-date {
+  opacity: 0.7;
+}
+.event-list-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+.event-list-item-body .event-column,
+.event-list-item-body .event-row {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  padding: 0.5rem;
+  display: flex;
+  width: 100%;
+}
+.event-list-item-body .event-row {
+  align-items: center;
+  gap: 2rem;
+}
+.event-list-item-body .event-column {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.event-list-item-body .event-name {
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 0px solid black;
+  transition: 0.2s;
+  position: relative;
+  width: fit-content;
+}
+.event-list-item-body .event-name:before {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  border-bottom: 2px solid black;
+  width: 0%;
+  transition: 0.3s ease;
+}
+.event-list-item-body .event-name:hover:before {
+  width: 100%;
+}
+
+.event-row {
+  flex-direction: row;
+}
+.location-svg,
+.time-svg {
+  width: 20px;
+}
+.location,
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+.event-content-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.event-details {
+  position: absolute;
+}
+

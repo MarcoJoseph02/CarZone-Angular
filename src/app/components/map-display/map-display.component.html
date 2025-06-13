@@ -1,0 +1,15 @@
+<div class="container">
+  <google-map height="100%" width="100%" [options]="options">
+    <map-advanced-marker
+      #marker="mapAdvancedMarker"
+      [position]="googleMapData.position"
+      (mapClick)="toggleInfoWindow(marker)"
+    />
+
+    <map-info-window [options]="mapInfoWindowOptions">
+      <a [href]="googleMapData.link" target="_blank">
+        {{ googleMapData.name }}
+      </a>
+    </map-info-window>
+  </google-map>
+</div>

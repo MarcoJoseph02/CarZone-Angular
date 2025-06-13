@@ -1,0 +1,145 @@
+<div class="car-details-container">
+  @if(car){
+  <div class="flex baseline car-details-header">
+    <h2 class="pageTitle">Car Details</h2>
+    <a routerLink="/allcars" class="button-link">
+      <svg
+        class="icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g
+          id="SVGRepo_tracerCarrier"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"
+            stroke="#0000ff"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+          <path
+            d="M9.00002 15.3802H13.92C15.62 15.3802 17 14.0002 17 12.3002C17 10.6002 15.62 9.22021 13.92 9.22021H7.15002"
+            stroke="#0000ff"
+            stroke-width="1.5"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+          <path
+            d="M8.57 10.7701L7 9.19012L8.57 7.62012"
+            stroke="#0000ff"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </g>
+      </svg>
+
+      Back to Cars
+    </a>
+  </div>
+
+  <div class="car-details-content">
+    <app-image-gallery [images]="car.images || []"></app-image-gallery>
+
+    <div class="car-details-info">
+      <div>
+        <h3>{{ car.model || "-" }} ({{ car.year }})</h3>
+        <h3>
+          {{ (car.price | egpCurrency) || "-" }}
+        </h3>
+      </div>
+      <div class="car-details-body">
+        <h3>Car Details</h3>
+        <div class="car-details-info-table">
+          <table>
+            <tr>
+              <td>Year</td>
+              <td>{{ car.year || "-" }}</td>
+            </tr>
+            <tr>
+              <td>Doors</td>
+              <td>{{ car.doors || "-" }}</td>
+            </tr>
+            <tr>
+              <td>Price</td>
+              <td>{{ car.price | egpCurrency }}</td>
+            </tr>
+            <tr>
+              <td>Acceleration</td>
+              <td>{{ car.acceleration || "-" }}</td>
+            </tr>
+            <tr>
+              <td>Engine Cylinder</td>
+              <td>{{ car.engine_cylinder || "-" }}</td>
+            </tr>
+            <tr>
+              <td>Engine Power</td>
+              <td>{{ car.engine_power || "-" }}</td>
+            </tr>
+            <tr>
+              <td>Engine Cubic Capacity Type</td>
+              <td>{{ car.engine_cubic_capacity_type || "-" }}</td>
+            </tr>
+            <tr>
+              <td>Fuel Efficiency</td>
+              <td>{{ car.fuel_efficiency || "-" }}</td>
+            </tr>
+            <tr>
+              <td>Top Speed</td>
+              <td>{{ car.top_speed || "-" }}</td>
+            </tr>
+            <tr>
+              <td>Color</td>
+              <td>{{ car.color || "-" }}</td>
+            </tr>
+            <tr>
+              <td>Transmission</td>
+              <td>{{ car.transmission || "-" }}</td>
+            </tr>
+            <tr>
+              <td>Engine Type</td>
+              <td>{{ car.engine_type || "-" }}</td>
+            </tr>
+            <tr>
+              <td>Features</td>
+              <td>{{ car.features || "-" }}</td>
+            </tr>
+
+            <tr>
+              <td>Performance</td>
+              <td>{{ car.performance || "-" }}</td>
+            </tr>
+            <tr>
+              <td>Safety</td>
+              <td>{{ car.safety || "-" }}</td>
+            </tr>
+            <tr>
+              <td>Available</td>
+              <td>{{ car.is_available ? "Available" : "Not Available" }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="purchase-button">
+    <app-stripe title="Book car" [car]="car"></app-stripe>
+    @if (car.is_booked) {
+    <div class="status-message">This car is already booked.</div>
+    } @if (car.is_sold) {
+    <div class="status-message">This car is already sold.</div>
+    } @if (!car.is_available) {
+    <div class="status-message">This car is not available for purchase.</div>
+    }
+  </div>
+  }
+  <div id="toastBox"></div>
+</div>

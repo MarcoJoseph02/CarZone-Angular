@@ -1,0 +1,103 @@
+.contact-container {
+  position: relative;
+  min-height: 100vh;
+}
+.content-data {
+  padding-top: 7rem;
+  margin: 0 20rem;
+}
+.map-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30vh;
+}
+
+.content-data app-map-display {
+  display: flex;
+  align-items: center;
+
+  width: 30%;
+  height: 90%;
+  margin: 0 20vh;
+}
+
+.email-us {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 1em;
+  background-color: rgba(0, 255, 170, 0.548);
+  padding: 2rem 0;
+  width: 100%;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  position: relative;
+  margin-top: 11rem;
+}
+
+.email-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 40vh;
+  gap: 0.7em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  gap: 1px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #717171;
+  font-weight: 600;
+  font-size: 12px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px solid #414141;
+  resize: none;
+}
+
+.form-group textarea {
+  height: 96px;
+}
+.form .submit-btn {
+  font-family: inherit;
+  color: #ffffff;
+  font-weight: 600;
+  width: 15%;
+  background: #313131;
+  border: 1px solid #414141;
+  padding: 12px 16px;
+  font-size: inherit;
+  margin-top: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.form .submit-btn:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #313131;
+}
